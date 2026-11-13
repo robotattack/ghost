@@ -1,0 +1,14 @@
+{
+  "name": "ghostwriter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A roguelike word-scoring puzzle game.",
+  "scripts": {
+    "build:words": "node scripts/build-words.mjs",
+    "test": "node test/logic.test.mjs",
+    "start": "npx --yes serve@14.2.4 ."
+  },
+  "devDependencies": {
+    "word-list": "4.1.0"
+  }
+}

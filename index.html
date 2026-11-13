@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghostwriter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header class="hud">
+      <h1>Ghostwriter</h1>
+      <div class="stats">
+        <div class="stat"><span class="label">Round</span><span id="round"></span></div>
+        <div class="stat"><span class="label">Words</span><span id="words"></span></div>
+        <div class="stat"><span class="label">Swaps</span><span id="swaps"></span></div>
+        <div class="stat money"><span class="label">Money</span><span id="money"></span></div>
+      </div>
+      <div class="progress">
+        <div class="bar"><div id="bar-fill"></div></div>
+        <div class="progress-text"><span id="score"></span> / <span id="target"></span></div>
+      </div>
+    </header>
+
+    <div id="curse" class="curse" hidden></div>
+
+    <section class="charms" aria-label="Charms">
+      <div id="charms"></div>
+    </section>
+
+    <section class="board">
+      <div id="word" class="word" aria-live="polite"></div>
+      <div id="preview" class="preview"></div>
+      <div id="rack" class="rack"></div>
+      <div class="actions">
+        <button id="btn-play" class="primary">Play <kbd>Enter</kbd></button>
+        <button id="btn-swap" title="Trade the selected tiles for new ones">Swap selected</button>
+        <button id="btn-shuffle">Shuffle <kbd>Space</kbd></button>
+        <button id="btn-clear">Clear <kbd>Esc</kbd></button>
+      </div>
+    </section>
+
+    <section class="log">
+      <h2>This round</h2>
+      <ol id="played"></ol>
+    </section>
+
+    <footer>
+      <button id="btn-help" class="link">How to play</button>
+      <span id="seed"></span>
+    </footer>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div id="modal" class="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="src/words.js"></script>
+  <script src="src/logic.js"></script>
+  <script src="src/ui.js"></script>
+</body>
+</html>

@@ -9,7 +9,13 @@
 <body>
   <main id="app">
     <header class="hud">
-      <h1>Ghostwriter</h1>
+      <div class="title-row">
+        <h1>Ghostwriter</h1>
+        <div class="title-buttons">
+          <button id="btn-mute" class="icon" aria-label="Toggle sound"></button>
+          <button id="btn-help" class="icon" aria-label="How to play">?</button>
+        </div>
+      </div>
       <div class="stats">
         <div class="stat"><span class="label">Round</span><span id="round"></span></div>
         <div class="stat"><span class="label">Words</span><span id="words"></span></div>
@@ -24,13 +30,25 @@
 
     <div id="curse" class="curse" hidden></div>
 
-    <section class="charms" aria-label="Charms">
-      <div id="charms"></div>
+    <section class="charms-wrap" aria-label="Charms">
+      <div class="charms-head">
+        <h2>Charms</h2>
+        <span class="hint">Trigger left to right. Tap a charm to move or sell it.</span>
+      </div>
+      <div id="charms" class="charms"></div>
     </section>
 
-    <section class="board">
+    <section class="board" id="board">
       <div id="word" class="word" aria-live="polite"></div>
-      <div id="preview" class="preview"></div>
+      <div class="scoreboard">
+        <div id="word-label" class="word-label"></div>
+        <div class="calc">
+          <div class="box chips"><span class="label">Chips</span><span id="chips">0</span></div>
+          <span class="times">×</span>
+          <div class="box mult"><span class="label">Mult</span><span id="mult">0</span></div>
+          <span id="equals" class="equals"></span>
+        </div>
+      </div>
       <div id="rack" class="rack"></div>
       <div class="actions">
         <button id="btn-play" class="primary">Play <kbd>Enter</kbd></button>
@@ -46,8 +64,8 @@
     </section>
 
     <footer>
-      <button id="btn-help" class="link">How to play</button>
       <span id="seed"></span>
+      <span id="bag"></span>
     </footer>
   </main>
 
@@ -56,9 +74,11 @@
   </div>
 
   <div id="toast" class="toast" hidden></div>
+  <div id="fx" class="fx" aria-hidden="true"></div>
 
   <script src="src/words.js"></script>
   <script src="src/logic.js"></script>
+  <script src="src/audio.js"></script>
   <script src="src/ui.js"></script>
 </body>
 </html>
